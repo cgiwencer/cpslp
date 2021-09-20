@@ -1,0 +1,57 @@
+{% extends "./base.html" %}
+
+{% block tittle %} Gestión de usuarios{% endblock %}
+{% block body %}
+    <div class="row">
+       <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <h2>Gestión de usuarios</h2>
+            <div class="card">
+               <div class="card-body">
+                   <form action="/registrarUsuario" method="POST">{% csrf_token %}
+                       <div class="form-group">
+                           <input type="text" id= "txtCodigo" name="txtCodigo" class="form-control" placeholder="Código" minlength="6" maxlength="6" requiered>   
+                       </div>
+                       <div class="form-group">
+                            <input type="text" id= "txtNombre" name="txtNombre" class="form-control" placeholder="Nombre Completo" minlength="5" maxlength="150" requiered>   
+                       </div>
+                       <div class="form-group">
+                            <input type="text" id= "txtUsuario" name="txtUsuario" class="form-control" placeholder="Usuario" minlength="5" maxlength="50" requiered>   
+                       </div> 
+                       <div class="form-group">
+                            <input type="text" id= "txtClave" name="txtClave" class="form-control" placeholder="Contraseña" minlength="8" maxlength="10" requiered>   
+                       </div>
+                       <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                   </div> 
+                   </form>
+               </div> 
+            </div>
+       </div> 
+       <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+           <h1>Listado de usuarios</h1>
+            <div class="table-responsive py-2">
+                <table class="table table-striped">
+                    <thead1>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th colspan="2">Opciones</th>
+                        </tr>
+                    </thead1>
+                    <tbody>
+                        {% for u in usuarios %}
+                        <tr>
+                           <td>{{u.codigo}}</td>                                                        
+                           <td>{{u.nombre}}</td>                                                        
+                           <td>{{u.nomusu}}</td>
+                           <td><a href=edicionUsuario{{u.codigo}}" class="btn btn-info">Editar</a></td>
+                           <td><a href=eliminarUsuario{{u.codigo}}" class="btn btn-danger">Eliminar</a></td>
+                        </tr>    
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+       </div> 
+    </div>>
+{% endblock %}
