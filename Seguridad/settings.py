@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'Seguridad.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'Seguridad.db',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cps_desarrollo',
+        'USER' : 'root',
+        'PASSWORD' : '',
+        'HOST' : 'localhost',
+        'PORT' : ''
     }
 }
 
