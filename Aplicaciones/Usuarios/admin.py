@@ -4,3 +4,4 @@ from .models import usuario
 
 admin.site.register(usuario)
 #cambio en rama desarrollo2
+# comentario 2
