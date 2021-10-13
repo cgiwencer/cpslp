@@ -3,4 +3,4 @@ from .models import usuario
 # Register your models here.
 
 admin.site.register(usuario)
-#cambio en rama desarroll
+#cambio en rama desarrollo2
