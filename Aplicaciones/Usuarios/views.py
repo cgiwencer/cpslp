@@ -17,7 +17,7 @@ def registrarUsuario(request):
 
 def edicionUsuario(request, codigo):
     user=usuario.objects.get(codigo=codigo)
-    return render(request, "edicionCurso.html", {"usuarios": user})
+    return render(request, "edicionUsuario.html", {"usuario": user})
 
 def editarUsuario(request):
     codigo=request.POST['txtCodigo']
