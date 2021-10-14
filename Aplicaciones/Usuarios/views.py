@@ -1,6 +1,7 @@
 from Aplicaciones import Usuarios
 from django.shortcuts import render, redirect
 from .models import usuario
+
 # Create your views here.
 def home(request):
     users=usuario.objects.all()
@@ -16,7 +17,7 @@ def registrarUsuario(request):
     return redirect('/')
 
 def edicionUsuario(request, codigo):
-    user=usuario.objects.get(codigo=codigo)
+    user=usuario.objects.get(codigo = codigo)
     return render(request, "edicionUsuario.html", {"usuario": user})
 
 def editarUsuario(request):
@@ -25,10 +26,10 @@ def editarUsuario(request):
     usua=request.POST['txtUsuario']
     clave=request.POST['txtClave']
 
-    user=usuario.objects.get(codigo=codigo)
-    user.nombre=nombre
-    user.usua=usua
-    user.clave=clave
+    user = usuario.objects.get(codigo = codigo)
+    user.nombre = nombre
+    user.usua = usua
+    user.clave = clave
     user.save()
 
     return redirect('/')
