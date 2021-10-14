@@ -38,3 +38,6 @@ def eliminarUsuario(request, codigo):
     user.delete()
 
     return redirect('/')
+
+def login(request):
+    return render(request, "login.html")
