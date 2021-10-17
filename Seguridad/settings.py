@@ -70,7 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Seguridad.wsgi.application'
 
-
+APPEND_SLASH=False
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -79,9 +79,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cps_desarrollo',
         'USER' : 'root',
-        'PASSWORD' : '',
+        'PASSWORD' : 'cagisa',
         'HOST' : 'localhost',
-        'PORT' : ''
+        'PORT' : '3306'
     }
 }
 
