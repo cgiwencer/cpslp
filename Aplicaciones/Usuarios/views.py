@@ -46,3 +46,7 @@ def eliminarUsuario(request, codigo):
 def agendatelefonica(request):
     pass
     return  render(request,"Agenda.html")
+
+def seguridad(request):
+    pass
+    return  render(request,"seguridad.html")

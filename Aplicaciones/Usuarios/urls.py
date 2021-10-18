@@ -7,5 +7,6 @@ urlpatterns = [
     path('edicionUsuario/<codigo>', views.edicionUsuario),
     path('editarUsuario', views.editarUsuario),
     path('eliminarUsuario/<codigo>', views.eliminarUsuario),
+    path('seguridad', views.seguridad),
     path('Agenda', views.agendatelefonica)
 ]
