@@ -2,7 +2,11 @@ from Aplicaciones import Usuarios
 from django.shortcuts import render, redirect
 from .models import usuario
 # Create your views here.
+
 def home(request):
+   return  render(request,"inicio.html")
+
+def usuarios(request):
     users=usuario.objects.all()
     return render(request,"gestionUsuarios.html",{"usuarios": users})
 
@@ -38,3 +42,7 @@ def eliminarUsuario(request, codigo):
     user.delete()
 
     return redirect('/')
+
+def agendatelefonica(request):
+    pass
+    return  render(request,"Agenda.html")
